@@ -16,6 +16,11 @@
             <div class="welcome-text">
                 <h1>Welcome to MediCare</h1>
                 <p>Your trusted healthcare management system. Providing comprehensive medical services with cutting-edge technology and compassionate care.</p>
+                <div style="margin-top: 20px;">
+                    <a href="home.php" class="btn btn-secondary" style="display: inline-block; padding: 12px 24px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 25px; transition: all 0.3s ease;">
+                        <i class="fas fa-home"></i> Visit Homepage
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -34,6 +39,9 @@
             if (isset($_SESSION['success'])) {
                 echo '<div class="alert alert-success">' . $_SESSION['success'] . '</div>';
                 unset($_SESSION['success']);
+            }
+            if (isset($_GET['message'])) {
+                echo '<div class="alert alert-success">' . htmlspecialchars($_GET['message']) . '</div>';
             }
             ?>
             
