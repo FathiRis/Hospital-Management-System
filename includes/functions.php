@@ -442,4 +442,28 @@ function convertToBytes($val) {
     }
     return $val;
 }
+
+//billing
+
+// functions.php additions
+function setMessage($message, $type = 'success') {
+    $_SESSION['message'] = $message;
+    $_SESSION['message_type'] = $type;
+}
+
+function hasMessage() {
+    return !empty($_SESSION['message']);
+}
+
+function getMessage() {
+    $message = $_SESSION['message'] ?? '';
+    unset($_SESSION['message']);
+    return $message;
+}
+
+function getMessageType() {
+    $type = $_SESSION['message_type'] ?? 'success';
+    unset($_SESSION['message_type']);
+    return $type;
+}
 ?>

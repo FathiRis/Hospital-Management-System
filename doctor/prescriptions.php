@@ -173,7 +173,7 @@ $doctor_info = $db->single();
                                 <div class="record-diagnosis">
                                     <i class="fas fa-calendar"></i> Date: <?php echo formatDate($prescription['prescription_date']); ?> |
                                     <i class="fas fa-pills"></i> Items: <?php echo $prescription['total_items']; ?> |
-                                    <i class="fas fa-dollar-sign"></i> Total: $<?php echo number_format($prescription['total_amount'], 2); ?>
+                                    <i class="fas fa-dollar-sign"></i> Total: Rs. <?php echo number_format($prescription['total_amount'], 2); ?>
                                     <?php if ($prescription['instructions']): ?>
                                     <br><i class="fas fa-notes-medical"></i> <?php echo $prescription['instructions']; ?>
                                     <?php endif; ?>

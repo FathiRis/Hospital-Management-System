@@ -94,7 +94,7 @@ const doctorsData = [
         department: 'cardiology',
         experience: '15 years',
         description: 'Experienced cardiologist specializing in heart disease prevention and treatment.',
-        fee: 1500
+        fee: 150
     },
     {
         id: 2,
@@ -103,7 +103,7 @@ const doctorsData = [
         department: 'pediatrics',
         experience: '10 years',
         description: 'Dedicated pediatrician providing comprehensive care for children and adolescents.',
-        fee: 1200
+        fee: 120
     },
     {
         id: 3,
@@ -112,7 +112,7 @@ const doctorsData = [
         department: 'neurology',
         experience: '12 years',
         description: 'Neurologist specializing in brain and nervous system disorders.',
-        fee: 1800
+        fee: 180
     },
     {
         id: 4,
@@ -121,7 +121,7 @@ const doctorsData = [
         department: 'orthopedics',
         experience: '8 years',
         description: 'Orthopedic surgeon expert in bone, joint, and musculoskeletal treatments.',
-        fee: 1600
+        fee: 160
     },
     {
         id: 5,
@@ -130,7 +130,7 @@ const doctorsData = [
         department: 'general',
         experience: '20 years',
         description: 'Family medicine practitioner providing comprehensive primary healthcare.',
-        fee: 1000
+        fee: 100
     },
     {
         id: 6,
@@ -139,7 +139,7 @@ const doctorsData = [
         department: 'cardiology',
         experience: '14 years',
         description: 'Interventional cardiologist specializing in minimally invasive procedures.',
-        fee: 1700
+        fee: 170
     }
 ];
 
@@ -169,7 +169,7 @@ function createDoctorCard(doctor) {
             <div class="specialty">${doctor.specialty}</div>
             <p>${doctor.description}</p>
             <p><strong>Experience:</strong> ${doctor.experience}</p>
-            <p><strong>Consultation Fee:</strong> Rs.${doctor.fee}</p>
+            <p><strong>Consultation Fee:</strong> $${doctor.fee}</p>
             <div class="doctor-actions">
                 <button class="btn btn-primary btn-sm" onclick="bookAppointment(${doctor.id})">Book Appointment</button>
                 <button class="btn btn-secondary btn-sm" onclick="viewProfile(${doctor.id})">View Profile</button>

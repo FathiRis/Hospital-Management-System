@@ -12,6 +12,7 @@ class Database {
     private $dbname = DB_NAME;
     private $dbh;
     private $error;
+    private $stmt;
 
     public function __construct() {
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
@@ -70,6 +71,23 @@ class Database {
 
     public function lastInsertId() {
         return $this->dbh->lastInsertId();
+    }
+
+    // Transaction methods
+    public function beginTransaction() {
+        return $this->dbh->beginTransaction();
+    }
+
+    public function commit() {
+        return $this->dbh->commit();
+    }
+
+    public function rollBack() {
+        return $this->dbh->rollBack();
+    }
+
+    public function inTransaction() {
+        return $this->dbh->inTransaction();
     }
 }
 ?>

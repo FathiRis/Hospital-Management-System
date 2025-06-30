@@ -1,9 +1,9 @@
 -- Complete Hospital Management System Database Schema
 -- This file contains all necessary tables and columns for the entire system
 
-DROP DATABASE IF EXISTS final_hospital_management_system;
-CREATE DATABASE final_hospital_management_system;
-USE final_hospital_management_system;
+DROP DATABASE IF EXISTS hospital_management_system;
+CREATE DATABASE hospital_management_system;
+USE hospital_management_system;
 
 -- Users Table
 CREATE TABLE users (

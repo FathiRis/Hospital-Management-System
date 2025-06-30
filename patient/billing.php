@@ -134,7 +134,7 @@ $patient_info = $db->single();
                     <div class="health-icon">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
-                    <div class="health-value">$<?php echo number_format($total_amount, 2); ?></div>
+                    <div class="health-value">Rs. <?php echo number_format($total_amount, 2); ?></div>
                     <div class="health-label">Total Amount</div>
                 </div>
                 
@@ -142,7 +142,7 @@ $patient_info = $db->single();
                     <div class="health-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <div class="health-value">$<?php echo number_format($paid_amount, 2); ?></div>
+                    <div class="health-value">Rs. <?php echo number_format($paid_amount, 2); ?></div>
                     <div class="health-label">Paid Amount</div>
                 </div>
                 
@@ -150,7 +150,7 @@ $patient_info = $db->single();
                     <div class="health-icon">
                         <i class="fas fa-exclamation-circle"></i>
                     </div>
-                    <div class="health-value">$<?php echo number_format($unpaid_amount, 2); ?></div>
+                    <div class="health-value">Rs. <?php echo number_format($unpaid_amount, 2); ?></div>
                     <div class="health-label">Outstanding</div>
                 </div>
             </div>
@@ -189,11 +189,11 @@ $patient_info = $db->single();
                                 </div>
                                 <div class="record-diagnosis">
                                     <p><strong>Description:</strong> <?php echo $bill['description'] ?: 'Medical services'; ?></p>
-                                    <p><strong>Amount:</strong> $<?php echo number_format($bill['amount'], 2); ?></p>
+                                    <p><strong>Amount:</strong> Rs. <?php echo number_format($bill['amount'], 2); ?></p>
                                     <?php if ($bill['tax_amount'] > 0): ?>
-                                    <p><strong>Tax:</strong> $<?php echo number_format($bill['tax_amount'], 2); ?></p>
+                                    <p><strong>Tax:</strong> Rs. <?php echo number_format($bill['tax_amount'], 2); ?></p>
                                     <?php endif; ?>
-                                    <p><strong>Total:</strong> $<?php echo number_format($bill['total_amount'], 2); ?></p>
+                                    <p><strong>Total:</strong> Rs. <?php echo number_format($bill['total_amount'], 2); ?></p>
                                     <p><strong>Billing Date:</strong> <?php echo formatDate($bill['billing_date']); ?></p>
                                     <p><strong>Due Date:</strong> <?php echo formatDate($bill['due_date']); ?></p>
                                     <?php if ($bill['payment_date']): ?>

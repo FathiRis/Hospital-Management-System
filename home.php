@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="details-imageh">
-                <img src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Medical Team">
+                <img src="/project/img/hero.jpg" alt="Medical Team">
             </div>
         </div>
     </section>
@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <div class="details-image">
-                    <img src="https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hospital Building">
+                    <img src="/project/img/details.jpeg" alt="Hospital Building">
                 </div>
             </div>
         </div>
@@ -274,7 +274,7 @@
                         <i class="fas fa-ambulance"></i>
                     </div>
                     <h3>Emergency Ambulance</h3>
-                    <p class="emergency-number">119</p>
+                    <p class="emergency-number">911</p>
                     <p>24/7 Emergency Medical Services</p>
                 </div>
                 <div class="emergency-card">
@@ -282,7 +282,7 @@
                         <i class="fas fa-hospital"></i>
                     </div>
                     <h3>Hospital Main Line</h3>
-                    <p class="emergency-number">+94-47 369 8521</p>
+                    <p class="emergency-number">+1-555-MEDICAL</p>
                     <p>General inquiries and appointments</p>
                 </div>
                 <div class="emergency-card">
@@ -290,7 +290,7 @@
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <h3>Emergency Hotline</h3>
-                    <p class="emergency-number">+94- 77 963 2587</p>
+                    <p class="emergency-number">+1-555-EMERGENCY</p>
                     <p>24/7 Medical emergency support</p>
                 </div>
                 <div class="emergency-card">
@@ -315,14 +315,14 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Address</h4>
-                            <p>123 Medical Center <br>Colombo 1 </p>
+                            <p>123 Medical Center Drive<br>Healthcare City, HC 12345</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone</h4>
-                            <p>+94-47 369 8521<br>+94-77 9632587</p>
+                            <p>+1-555-MEDICAL<br>+1-555-EMERGENCY</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -384,21 +384,21 @@
                         <li><a href="#services">Pediatrics</a></li>
                         <li><a href="#services">Neurology</a></li>
                         <li><a href="#services">Orthopedics</a></li>
-                        <li><a href="#emergency">Emergency Care</a></li>
+                        <li><a href="#services">Emergency Care</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <div class="contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive</p>
-                        <p><i class="fas fa-phone"></i> +94-47 369 8521</p>
+                        <p><i class="fas fa-phone"></i> +1-555-MEDICAL</p>
                         <p><i class="fas fa-envelope"></i> info@medicare.com</p>
                         <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 MediCare Hospital. All rights reserved.</p>
+                <p>&copy; 2024 MediCare Hospital. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -138,7 +138,7 @@ foreach ($bills as $bill) {
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                     </div>
-                    <div class="card-value">$<?php echo number_format($total_amount, 2); ?></div>
+                    <div class="card-value">Rs. <?php echo number_format($total_amount, 2); ?></div>
                     <div class="card-change">All time</div>
                 </div>
                 
@@ -149,7 +149,7 @@ foreach ($bills as $bill) {
                             <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
-                    <div class="card-value">$<?php echo number_format($paid_amount, 2); ?></div>
+                    <div class="card-value">Rs. <?php echo number_format($paid_amount, 2); ?></div>
                     <div class="card-change">Collected</div>
                 </div>
                 
@@ -160,7 +160,7 @@ foreach ($bills as $bill) {
                             <i class="fas fa-exclamation-circle"></i>
                         </div>
                     </div>
-                    <div class="card-value">$<?php echo number_format($unpaid_amount, 2); ?></div>
+                    <div class="card-value">Rs. <?php echo number_format($unpaid_amount, 2); ?></div>
                     <div class="card-change">Pending payment</div>
                 </div>
             </div>
@@ -222,8 +222,8 @@ foreach ($bills as $bill) {
                                 <td>#<?php echo str_pad($bill['bill_id'], 6, '0', STR_PAD_LEFT); ?></td>
                                 <td><?php echo $bill['patient_name'] . ' ' . $bill['patient_last']; ?></td>
                                 <td><?php echo $bill['description'] ?: 'Medical services'; ?></td>
-                                <td>$<?php echo number_format($bill['amount'], 2); ?></td>
-                                <td>$<?php echo number_format($bill['total_amount'], 2); ?></td>
+                                <td>Rs. <?php echo number_format($bill['amount'], 2); ?></td>
+                                <td>Rs. <?php echo number_format($bill['total_amount'], 2); ?></td>
                                 <td><?php echo formatDate($bill['billing_date']); ?></td>
                                 <td><?php echo formatDate($bill['due_date']); ?></td>
                                 <td>

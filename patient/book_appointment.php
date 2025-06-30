@@ -166,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     Dr. <?php echo $doctor['first_name'] . ' ' . $doctor['last_name']; ?> - 
                                     <?php echo $doctor['specialization']; ?> 
                                     (<?php echo $doctor['department']; ?>) - 
-                                    $<?php echo number_format($doctor['consultation_fee'], 2); ?>
+                                    Rs. <?php echo number_format($doctor['consultation_fee'], 2); ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -222,7 +222,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <h4>Dr. <?php echo $doctor['first_name'] . ' ' . $doctor['last_name']; ?></h4>
                             <p><i class="fas fa-stethoscope"></i> <?php echo $doctor['specialization']; ?></p>
                             <p><i class="fas fa-building"></i> <?php echo $doctor['department']; ?></p>
-                            <p><i class="fas fa-dollar-sign"></i> Consultation Fee: $<?php echo number_format($doctor['consultation_fee'], 2); ?></p>
+                            <p><i class="fas fa-dollar-sign"></i> Consultation Fee: Rs. <?php echo number_format($doctor['consultation_fee'], 2); ?></p>
                         </div>
                         <div class="appointment-actions">
                             <button onclick="selectDoctor(<?php echo $doctor['doctor_id']; ?>)" class="btn btn-sm btn-primary">Select Doctor</button>

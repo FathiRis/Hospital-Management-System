@@ -71,7 +71,7 @@ $schedule = $db->resultset();
                         <div class="specialty"><?php echo $doctor['specialization']; ?></div>
                         <div class="department"><?php echo $doctor['department']; ?> Department</div>
                         <div class="experience"><?php echo $doctor['experience_years']; ?> years of experience</div>
-                        <div class="consultation-fee">Consultation Fee: $<?php echo number_format($doctor['consultation_fee'], 2); ?></div>
+                        <div class="consultation-fee">Consultation Fee: Rs. <?php echo number_format($doctor['consultation_fee'], 2); ?></div>
                     </div>
                 </div>
 
@@ -164,14 +164,14 @@ $schedule = $db->resultset();
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive</p>
-                        <p><i class="fas fa-phone"></i> +1-555-MEDICAL</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Medical Center </p>
+                        <p><i class="fas fa-phone"></i> +94 - 047 987 4563 </p>
                         <p><i class="fas fa-envelope"></i> info@medicare.com</p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 MediCare Hospital. All rights reserved.</p>
+                <p>&copy; 2025 MediCare Hospital. All rights reserved.</p>
             </div>
         </div>
     </footer>

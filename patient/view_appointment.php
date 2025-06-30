@@ -172,7 +172,7 @@ $patient_info = $db->single();
                 <div class="form-group">
                     <label class="form-label">Consultation Fee</label>
                     <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
-                        $<?php echo number_format($appointment['consultation_fee'], 2); ?>
+                        Rs. <?php echo number_format($appointment['consultation_fee'], 2); ?>
                     </div>
                 </div>
                 

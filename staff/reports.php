@@ -173,7 +173,7 @@ for ($i = 5; $i >= 0; $i--) {
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                     </div>
-                    <div class="card-value">$<?php echo number_format($revenue_this_month, 2); ?></div>
+                    <div class="card-value">Rs. <?php echo number_format($revenue_this_month, 2); ?></div>
                     <div class="card-change">This month</div>
                 </div>
             </div>

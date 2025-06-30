@@ -140,7 +140,7 @@ $patient_info = $db->single();
                                     <p><strong>Date:</strong> <?php echo formatDate($prescription['prescription_date']); ?></p>
                                     <p><strong>Items:</strong> <?php echo $prescription['total_items']; ?> medication(s)</p>
                                     <?php if ($prescription['total_amount'] > 0): ?>
-                                    <p><strong>Total Amount:</strong> $<?php echo number_format($prescription['total_amount'], 2); ?></p>
+                                    <p><strong>Total Amount:</strong> Rs. <?php echo number_format($prescription['total_amount'], 2); ?></p>
                                     <?php endif; ?>
                                     <?php if ($prescription['instructions']): ?>
                                     <p><strong>Instructions:</strong> <?php echo $prescription['instructions']; ?></p>
@@ -204,7 +204,7 @@ $patient_info = $db->single();
                         <i class="fas fa-dollar-sign"></i>
                     </div>
                     <div class="health-value">
-                        $<?php 
+                        Rs. <?php 
                         $total = array_sum(array_column($prescriptions, 'total_amount'));
                         echo number_format($total, 2);
                         ?>

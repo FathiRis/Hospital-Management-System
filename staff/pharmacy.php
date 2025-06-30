@@ -155,7 +155,7 @@ foreach ($medicines as $medicine) {
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                     </div>
-                    <div class="card-value">$<?php echo number_format($total_value, 2); ?></div>
+                    <div class="card-value">Rs. <?php echo number_format($total_value, 2); ?></div>
                     <div class="card-change">Inventory worth</div>
                 </div>
             </div>
@@ -223,7 +223,7 @@ foreach ($medicines as $medicine) {
                                         <span class="status-badge" style="background: #ff9800; color: white; font-size: 10px;">LOW</span>
                                     <?php endif; ?>
                                 </td>
-                                <td>$<?php echo number_format($medicine['unit_price'], 2); ?></td>
+                                <td>Rs. <?php echo number_format($medicine['unit_price'], 2); ?></td>
                                 <td>
                                     <?php echo $medicine['expiry_date'] ? formatDate($medicine['expiry_date']) : 'N/A'; ?>
                                     <?php if ($is_expired): ?>
