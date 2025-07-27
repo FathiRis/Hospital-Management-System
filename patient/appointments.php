@@ -156,8 +156,7 @@ foreach ($appointments as $appointment) {
                                     <?php echo $appointment['status']; ?>
                                 </span>
                                 <a href="view_appointment.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn btn-sm btn-primary">View Details</a>
-                                <a href="reschedule.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn btn-sm btn-warning">Reschedule</a>
-                            </div>
+                                </div>
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>

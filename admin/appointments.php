@@ -3,10 +3,9 @@ require_once '../includes/session.php';
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
-requireRole('doctor');
+requireRole('admin');
 
 $db = new Database();
-
 
 // Handle search and filters
 $search = isset($_GET['search']) ? sanitizeInput($_GET['search']) : '';
@@ -36,14 +35,6 @@ if (!empty($where_conditions)) {
     $where_clause = 'WHERE ' . implode(' AND ', $where_conditions);
 }
 
-// Get doctor information
-$doctor_id = getDoctorId(getUserId());
-
-// Get doctor info for display
-$db->query("SELECT d.*, u.first_name, u.last_name FROM doctors d JOIN users u ON d.user_id = u.user_id WHERE d.doctor_id = :doctor_id");
-$db->bind(':doctor_id', $doctor_id);
-$doctor_info = $db->single();
-
 // Get all appointments
 $query = "SELECT a.*, p.first_name as patient_name, p.last_name as patient_last, 
                  d.first_name as doctor_name, d.last_name as doctor_last, dt.specialization
@@ -68,19 +59,16 @@ $appointments = $db->resultset();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointments - Hospital Management System</title>
-    <link rel="stylesheet" href="../css/doctor.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="doctor-container">
+    <div class="admin-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <div class="doctor-avatar">
-                    <?php echo strtoupper(substr($doctor_info['first_name'], 0, 1)); ?>
-                </div>
-                <h2>Dr. <?php echo $doctor_info['first_name'] . ' ' . $doctor_info['last_name']; ?></h2>
-                <p><?php echo $doctor_info['specialization']; ?></p>
+                <h2>MediCare Admin</h2>
+                <p>Hospital Management</p>
             </div>
             
             <ul class="nav-menu">
@@ -91,27 +79,45 @@ $appointments = $db->resultset();
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="appointments.php" class="nav-link active">
-                        <i class="fas fa-calendar-alt"></i>
-                        My Appointments
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="patients.php" class="nav-link">
                         <i class="fas fa-users"></i>
-                        My Patients
+                        Patients
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="schedule.php" class="nav-link">
-                        <i class="fas fa-clock"></i>
-                        Schedule
+                    <a href="doctors.php" class="nav-link">
+                        <i class="fas fa-user-md"></i>
+                        Doctors
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="profile.php" class="nav-link">
-                        <i class="fas fa-user"></i>
-                        Profile
+                    <a href="appointments.php" class="nav-link active">
+                        <i class="fas fa-calendar-alt"></i>
+                        Appointments
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="billing.php" class="nav-link">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        Billing
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pharmacy.php" class="nav-link">
+                        <i class="fas fa-pills"></i>
+                        Pharmacy
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reports.php" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.php" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        Settings
                     </a>
                 </li>
             </ul>
@@ -143,9 +149,10 @@ $appointments = $db->resultset();
                     <div class="form-group">
                         <select name="status" class="form-control">
                             <option value="">All Status</option>
-                            <?php foreach (getAppointmentStatuses() as $status): ?>
-                                <option value="<?php echo $status; ?>" <?php echo $status_filter === $status ? 'selected' : ''; ?>><?php echo $status; ?></option>
-                            <?php endforeach; ?>
+                            <option value="Scheduled" <?php echo $status_filter === 'Scheduled' ? 'selected' : ''; ?>>Scheduled</option>
+                            <option value="Completed" <?php echo $status_filter === 'Completed' ? 'selected' : ''; ?>>Completed</option>
+                            <option value="Cancelled" <?php echo $status_filter === 'Cancelled' ? 'selected' : ''; ?>>Cancelled</option>
+                            <option value="No-Show" <?php echo $status_filter === 'No-Show' ? 'selected' : ''; ?>>No-Show</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -202,6 +209,7 @@ $appointments = $db->resultset();
                                 <td>
                                     <div class="action-buttons">
                                         <a href="view_appointment.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn-sm btn-view">View</a>
+                                        <a href="edit_appointment.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn-sm btn-edit">Edit</a>
                                         <?php if ($appointment['status'] === 'Scheduled'): ?>
                                         <?php endif; ?>
                                     </div>

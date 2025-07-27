@@ -77,12 +77,6 @@ $pending_prescriptions = $db->single()['total'];
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="prescriptions.php" class="nav-link">
-                        <i class="fas fa-prescription-bottle"></i>
-                        Prescriptions
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="schedule.php" class="nav-link">
                         <i class="fas fa-clock"></i>
                         Schedule
@@ -101,7 +95,7 @@ $pending_prescriptions = $db->single()['total'];
         <div class="main-content">
             <div class="header">
                 <div class="header-left">
-                    <h1>Good Morning, Dr. <?php echo $doctor_info['last_name']; ?></h1>
+                    <h1>Hello, Dr. <?php echo $doctor_info['last_name']; ?></h1>
                     <p>Today is <?php echo date('l, F j, Y'); ?></p>
                 </div>
                 <div class="header-right">
@@ -148,7 +142,7 @@ $pending_prescriptions = $db->single()['total'];
             <!-- Today's Schedule -->
             <div class="schedule-container">
                 <div class="schedule-header">
-                    <h3 class="schedule-title">Today's Schedule</h3>
+                    <h3 class="schedule-title">Today's Schedule </h3>
                     <div class="schedule-date"><?php echo date('F j, Y'); ?></div>
                 </div>
                 
@@ -190,21 +184,21 @@ $pending_prescriptions = $db->single()['total'];
                 </div>
                 
                 <div class="quick-stats">
-                    <div class="stat-card" onclick="location.href='add_prescription.php'">
+                    <div class="stat-card" >
                         <div class="stat-icon">
                             <i class="fas fa-plus-circle"></i>
                         </div>
                         <div class="stat-label">New Prescription</div>
                     </div>
                     
-                    <div class="stat-card" onclick="location.href='patient_search.php'">
+                    <div class="stat-card" onclick="location.href='patients.php'">
                         <div class="stat-icon">
                             <i class="fas fa-search"></i>
                         </div>
                         <div class="stat-label">Search Patient</div>
                     </div>
                     
-                    <div class="stat-card" onclick="location.href='medical_records.php'">
+                    <div class="stat-card" >
                         <div class="stat-icon">
                             <i class="fas fa-file-medical"></i>
                         </div>

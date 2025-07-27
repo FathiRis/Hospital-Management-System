@@ -139,7 +139,7 @@ $pending_bills = $db->single()['total'];
                     <div class="action-description">Check your current and past prescriptions</div>
                 </div>
                 
-                <div class="action-card" onclick="location.href='test_results.php'">
+                <div class="action-card" onclick="location.href='medical_records.php'">
                     <div class="action-icon">
                         <i class="fas fa-vial"></i>
                     </div>
@@ -229,8 +229,7 @@ $pending_bills = $db->single()['total'];
                             </div>
                             <div class="appointment-actions">
                                 <a href="view_appointment.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn btn-sm btn-primary">View</a>
-                                <a href="reschedule.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn btn-sm btn-warning">Reschedule</a>
-                            </div>
+                                </div>
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>

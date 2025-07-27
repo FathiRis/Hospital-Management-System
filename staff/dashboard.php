@@ -38,11 +38,11 @@ $todays_appointments = $db->resultset();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Dashboard - Hospital Management System</title>
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/staff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="admin-container">
+    <div class="staff-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
@@ -188,8 +188,7 @@ $todays_appointments = $db->resultset();
                                     <div class="action-buttons">
                                         <a href="view_appointment.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn-sm btn-view">View</a>
                                         <a href="edit_appointment.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn-sm btn-edit">Edit</a>
-                                        <a href="check_in.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn-sm btn-success">Check In</a>
-                                    </div>
+                                        </div>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -205,7 +204,7 @@ $todays_appointments = $db->resultset();
                 </div>
                 
                 <div class="dashboard-grid">
-                    <div class="dashboard-card" onclick="location.href='register_patient.php'" style="cursor: pointer;">
+                    <div class="dashboard-card" onclick="location.href='patients.php'" style="cursor: pointer;">
                         <div class="card-header">
                             <h3 class="card-title">Register Patient</h3>
                             <div class="card-icon">
@@ -215,7 +214,7 @@ $todays_appointments = $db->resultset();
                         <p>Add new patient to system</p>
                     </div>
                     
-                    <div class="dashboard-card" onclick="location.href='schedule_appointment.php'" style="cursor: pointer;">
+                    <div class="dashboard-card" onclick="location.href='appointments.php'" style="cursor: pointer;">
                         <div class="card-header">
                             <h3 class="card-title">Schedule Appointment</h3>
                             <div class="card-icon">
@@ -225,7 +224,7 @@ $todays_appointments = $db->resultset();
                         <p>Book new appointment</p>
                     </div>
                     
-                    <div class="dashboard-card" onclick="location.href='process_billing.php'" style="cursor: pointer;">
+                    <div class="dashboard-card" onclick="location.href='billing.php'" style="cursor: pointer;">
                         <div class="card-header">
                             <h3 class="card-title">Process Billing</h3>
                             <div class="card-icon">
@@ -235,7 +234,7 @@ $todays_appointments = $db->resultset();
                         <p>Handle patient payments</p>
                     </div>
                     
-                    <div class="dashboard-card" onclick="location.href='pharmacy_requests.php'" style="cursor: pointer;">
+                    <div class="dashboard-card" onclick="location.href='pharmacy.php'" style="cursor: pointer;">
                         <div class="card-header">
                             <h3 class="card-title">Pharmacy Requests</h3>
                             <div class="card-icon">

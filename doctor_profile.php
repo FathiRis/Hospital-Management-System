@@ -352,6 +352,59 @@ $schedule = $db->resultset();
         `;
         
         document.body.appendChild(modal);
+
+        const modalStyles = `
+        <style>
+        .login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 90%;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .modal-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .close-modal {
+            font-size: 24px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .modal-body {
+            padding: 30px;
+            text-align: center;
+        }
+        .modal-body p {
+            margin-bottom: 25px;
+            color: var(--dark-gray);
+        }
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        </style>
+    `;
+
+    document.head.insertAdjacentHTML('beforeend', modalStyles);
         
         // Close modal functionality
         modal.querySelector('.close-modal').addEventListener('click', () => {

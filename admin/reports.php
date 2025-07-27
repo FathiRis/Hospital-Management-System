@@ -3,7 +3,7 @@ require_once '../includes/session.php';
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
-requireRole('staff');
+requireRole('admin');
 
 $db = new Database();
 
@@ -71,36 +71,42 @@ for ($i = 5; $i >= 0; $i--) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reports - Hospital Management System</title>
-    <link rel="stylesheet" href="../css/staff.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="staff-container">
+    <div class="admin-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>MediCare Staff</h2>
+                <h2>MediCare Admin</h2>
                 <p>Hospital Management</p>
             </div>
             
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="dashboard.php" class="nav-link">
+                    <a href="dashboard.php" class="nav-link active">
                         <i class="fas fa-tachometer-alt"></i>
                         Dashboard
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="appointments.php" class="nav-link">
-                        <i class="fas fa-calendar-alt"></i>
-                        Appointments
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="patients.php" class="nav-link">
                         <i class="fas fa-users"></i>
                         Patients
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="doctors.php" class="nav-link">
+                        <i class="fas fa-user-md"></i>
+                        Doctors
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="appointments.php" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        Appointments
                     </a>
                 </li>
                 <li class="nav-item">
@@ -116,9 +122,15 @@ for ($i = 5; $i >= 0; $i--) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="reports.php" class="nav-link active">
+                    <a href="reports.php" class="nav-link">
                         <i class="fas fa-chart-bar"></i>
                         Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.php" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        Settings
                     </a>
                 </li>
             </ul>

@@ -274,7 +274,7 @@
                         <i class="fas fa-ambulance"></i>
                     </div>
                     <h3>Emergency Ambulance</h3>
-                    <p class="emergency-number">911</p>
+                    <p class="emergency-number">1990</p>
                     <p>24/7 Emergency Medical Services</p>
                 </div>
                 <div class="emergency-card">
@@ -282,7 +282,7 @@
                         <i class="fas fa-hospital"></i>
                     </div>
                     <h3>Hospital Main Line</h3>
-                    <p class="emergency-number">+1-555-MEDICAL</p>
+                    <p class="emergency-number">+94-555-MEDICAL</p>
                     <p>General inquiries and appointments</p>
                 </div>
                 <div class="emergency-card">
@@ -290,7 +290,7 @@
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <h3>Emergency Hotline</h3>
-                    <p class="emergency-number">+1-555-EMERGENCY</p>
+                    <p class="emergency-number">+94-555-EMERGENCY</p>
                     <p>24/7 Medical emergency support</p>
                 </div>
                 <div class="emergency-card">
@@ -298,7 +298,7 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Email Support</h3>
-                    <p class="emergency-number">emergency@medicare.com</p>
+                    <p class="emergency-number">info@care.com</p>
                     <p>Non-urgent medical inquiries</p>
                 </div>
             </div>
@@ -315,35 +315,34 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Address</h4>
-                            <p>123 Medical Center Drive<br>Healthcare City, HC 12345</p>
+                            <p>123 Medical Center <br>Healthcare City, colombo 01</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone</h4>
-                            <p>+1-555-MEDICAL<br>+1-555-EMERGENCY</p>
+                            <p>+94 - 047 123 4569<br>+94 - 071 987 4563</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>info@medicare.com<br>emergency@medicare.com</p>
+                            <p>info@medicare.com<br>emergency@medi.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
                         <div>
                             <h4>Hours</h4>
-                            <p>24/7 Emergency Services<br>Mon-Fri: 8AM-8PM (General)</p>
+                            <p>24/7 Emergency Services<br>Monday - Friday <br>8.00 AM - 8.00 PM (General)</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-map">
-                    <div class="map-placeholder">
-                        <i class="fas fa-map"></i>
-                        <p>Interactive Map</p>
+                <div class="contact-map">        
+                    <div class="details-image">
+                        <img src="/project/img/map.jpg" alt="Interactive Map">
                     </div>
                 </div>
             </div>
@@ -384,21 +383,21 @@
                         <li><a href="#services">Pediatrics</a></li>
                         <li><a href="#services">Neurology</a></li>
                         <li><a href="#services">Orthopedics</a></li>
-                        <li><a href="#services">Emergency Care</a></li>
+                        <li><a href="#emergency">Emergency Care</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive</p>
-                        <p><i class="fas fa-phone"></i> +1-555-MEDICAL</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Medical Center </p>
+                        <p><i class="fas fa-phone"></i> +94 - 047 123 4569</p>
                         <p><i class="fas fa-envelope"></i> info@medicare.com</p>
                         <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 MediCare Hospital. All rights reserved.</p>
+                <p>&copy; 2025 MediCare Hospital. All rights reserved.</p>
             </div>
         </div>
     </footer>

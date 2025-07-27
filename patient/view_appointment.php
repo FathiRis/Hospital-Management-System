@@ -212,7 +212,6 @@ $patient_info = $db->single();
                 
                 <?php if ($appointment['status'] === 'Scheduled' && strtotime($appointment['appointment_date'] . ' ' . $appointment['appointment_time']) > time()): ?>
                 <div class="appointment-actions" style="margin-top: 30px; text-align: center;">
-                    <a href="reschedule.php?id=<?php echo $appointment_id; ?>" class="btn btn-warning">Reschedule Appointment</a>
                     <a href="cancel_appointment.php?id=<?php echo $appointment_id; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel this appointment?')">Cancel Appointment</a>
                 </div>
                 <?php endif; ?>

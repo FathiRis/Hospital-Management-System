@@ -3,7 +3,7 @@ require_once '../includes/session.php';
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
-requireRole('staff');
+requireRole('admin');
 
 $db = new Database();
 
@@ -37,15 +37,15 @@ $patients = $db->resultset();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patients - Hospital Management System</title>
-    <link rel="stylesheet" href="../css/staff.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="staff-container">
+    <div class="admin-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>MediCare Staff</h2>
+                <h2>MediCare Admin</h2>
                 <p>Hospital Management</p>
             </div>
             
@@ -57,15 +57,21 @@ $patients = $db->resultset();
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="appointments.php" class="nav-link">
-                        <i class="fas fa-calendar-alt"></i>
-                        Appointments
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="patients.php" class="nav-link active">
                         <i class="fas fa-users"></i>
                         Patients
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="doctors.php" class="nav-link">
+                        <i class="fas fa-user-md"></i>
+                        Doctors
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="appointments.php" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        Appointments
                     </a>
                 </li>
                 <li class="nav-item">
@@ -84,6 +90,12 @@ $patients = $db->resultset();
                     <a href="reports.php" class="nav-link">
                         <i class="fas fa-chart-bar"></i>
                         Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.php" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        Settings
                     </a>
                 </li>
             </ul>
@@ -158,7 +170,8 @@ $patients = $db->resultset();
                                     <div class="action-buttons">
                                         <a href="view_patient.php?id=<?php echo $patient['patient_id']; ?>" class="btn-sm btn-view">View</a>
                                         <a href="edit_patient.php?id=<?php echo $patient['patient_id']; ?>" class="btn-sm btn-edit">Edit</a>
-                                        </div>
+                                        <a href="patient_history.php?id=<?php echo $patient['patient_id']; ?>" class="btn-sm btn-primary">History</a>
+                                    </div>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -168,6 +181,19 @@ $patients = $db->resultset();
             </div>
         </div>
     </div>
+
+    <script>
+        // Add active class to current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-```

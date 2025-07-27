@@ -59,11 +59,11 @@ $appointments = $db->resultset();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointments - Hospital Management System</title>
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/staff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="admin-container">
+    <div class="staff-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
@@ -198,7 +198,6 @@ $appointments = $db->resultset();
                                         <a href="view_appointment.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn-sm btn-view">View</a>
                                         <a href="edit_appointment.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn-sm btn-edit">Edit</a>
                                         <?php if ($appointment['status'] === 'Scheduled'): ?>
-                                        <a href="check_in.php?id=<?php echo $appointment['appointment_id']; ?>" class="btn-sm btn-success">Check In</a>
                                         <?php endif; ?>
                                     </div>
                                 </td>

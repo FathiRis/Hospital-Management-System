@@ -209,10 +209,7 @@ $patient_info = $db->single();
                             </div>
                             <div class="appointment-actions">
                                 <a href="view_bill.php?id=<?php echo $bill['bill_id']; ?>" class="btn btn-sm btn-primary">View Details</a>
-                                <a href="print_bill.php?id=<?php echo $bill['bill_id']; ?>" class="btn btn-sm btn-secondary" target="_blank">Print</a>
-                                <?php if ($bill['status'] !== 'Paid'): ?>
-                                <a href="pay_bill.php?id=<?php echo $bill['bill_id']; ?>" class="btn btn-sm btn-success">Pay Now</a>
-                                <?php endif; ?>
+                                
                             </div>
                         </div>
                         <?php endforeach; ?>

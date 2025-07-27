@@ -3,7 +3,7 @@ require_once '../includes/session.php';
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
-requireRole('staff');
+requireRole('admin');
 
 $db = new Database();
 
@@ -49,11 +49,11 @@ $paid_amount = 0;
 $unpaid_amount = 0;
 
 foreach ($bills as $bill) {
-    $total_amount += $bill['total_amount'];
+    $total_amount += $bill['amount'];
     if ($bill['status'] === 'Paid') {
-        $paid_amount += $bill['total_amount'];
+        $paid_amount += $bill['amount'];
     } else {
-        $unpaid_amount += $bill['total_amount'];
+        $unpaid_amount += $bill['amount'];
     }
 }
 ?>
@@ -64,15 +64,15 @@ foreach ($bills as $bill) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billing - Hospital Management System</title>
-    <link rel="stylesheet" href="../css/staff.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="staff-container">
+    <div class="admin-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>MediCare Staff</h2>
+                <h2>MediCare Admin</h2>
                 <p>Hospital Management</p>
             </div>
             
@@ -84,15 +84,21 @@ foreach ($bills as $bill) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="appointments.php" class="nav-link">
-                        <i class="fas fa-calendar-alt"></i>
-                        Appointments
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="patients.php" class="nav-link">
                         <i class="fas fa-users"></i>
                         Patients
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="doctors.php" class="nav-link">
+                        <i class="fas fa-user-md"></i>
+                        Doctors
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="appointments.php" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        Appointments
                     </a>
                 </li>
                 <li class="nav-item">
@@ -111,6 +117,12 @@ foreach ($bills as $bill) {
                     <a href="reports.php" class="nav-link">
                         <i class="fas fa-chart-bar"></i>
                         Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.php" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        Settings
                     </a>
                 </li>
             </ul>
@@ -178,9 +190,9 @@ foreach ($bills as $bill) {
                     <div class="form-group">
                         <select name="status" class="form-control">
                             <option value="">All Status</option>
-                            <?php foreach (getBillingStatuses() as $status): ?>
-                                <option value="<?php echo $status; ?>" <?php echo $status_filter === $status ? 'selected' : ''; ?>><?php echo $status; ?></option>
-                            <?php endforeach; ?>
+                            <option value="Paid" <?php echo $status_filter === 'Paid' ? 'selected' : ''; ?>>Paid</option>
+                            <option value="Unpaid" <?php echo $status_filter === 'Unpaid' ? 'selected' : ''; ?>>Unpaid</option>
+                            <option value="Partial" <?php echo $status_filter === 'Partial' ? 'selected' : ''; ?>>Partial</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -200,19 +212,18 @@ foreach ($bills as $bill) {
                         <tr>
                             <th>Bill ID</th>
                             <th>Patient</th>
-                            <th>Description</th>
                             <th>Amount</th>
-                            <th>Total</th>
                             <th>Billing Date</th>
                             <th>Due Date</th>
                             <th>Status</th>
+                            <th>Payment Method</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if (empty($bills)): ?>
                         <tr>
-                            <td colspan="9" style="text-align: center; padding: 40px;">
+                            <td colspan="8" style="text-align: center; padding: 40px;">
                                 No bills found
                             </td>
                         </tr>
@@ -221,9 +232,7 @@ foreach ($bills as $bill) {
                             <tr>
                                 <td>#<?php echo str_pad($bill['bill_id'], 6, '0', STR_PAD_LEFT); ?></td>
                                 <td><?php echo $bill['patient_name'] . ' ' . $bill['patient_last']; ?></td>
-                                <td><?php echo $bill['description'] ?: 'Medical services'; ?></td>
                                 <td>Rs. <?php echo number_format($bill['amount'], 2); ?></td>
-                                <td>Rs. <?php echo number_format($bill['total_amount'], 2); ?></td>
                                 <td><?php echo formatDate($bill['billing_date']); ?></td>
                                 <td><?php echo formatDate($bill['due_date']); ?></td>
                                 <td>
@@ -231,6 +240,7 @@ foreach ($bills as $bill) {
                                         <?php echo $bill['status']; ?>
                                     </span>
                                 </td>
+                                <td><?php echo $bill['payment_method'] ?: 'N/A'; ?></td>
                                 <td>
                                     <div class="action-buttons">
                                         <a href="view_bill.php?id=<?php echo $bill['bill_id']; ?>" class="btn-sm btn-view">View</a>

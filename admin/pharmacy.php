@@ -3,7 +3,7 @@ require_once '../includes/session.php';
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
-requireRole('staff');
+requireRole('admin');
 
 $db = new Database();
 
@@ -13,7 +13,7 @@ $where_clause = '';
 $params = [];
 
 if (!empty($search)) {
-    $where_clause = "WHERE name LIKE :search OR generic_name LIKE :search OR supplier LIKE :search";
+    $where_clause = "WHERE name LIKE :search OR supplier LIKE :search";
     $params[':search'] = "%$search%";
 }
 
@@ -48,15 +48,15 @@ foreach ($medicines as $medicine) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharmacy - Hospital Management System</title>
-    <link rel="stylesheet" href="../css/staff.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="staff-container">
+    <div class="admin-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>MediCare Staff</h2>
+                <h2>MediCare Admin</h2>
                 <p>Hospital Management</p>
             </div>
             
@@ -68,15 +68,21 @@ foreach ($medicines as $medicine) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="appointments.php" class="nav-link">
-                        <i class="fas fa-calendar-alt"></i>
-                        Appointments
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="patients.php" class="nav-link">
                         <i class="fas fa-users"></i>
                         Patients
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="doctors.php" class="nav-link">
+                        <i class="fas fa-user-md"></i>
+                        Doctors
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="appointments.php" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        Appointments
                     </a>
                 </li>
                 <li class="nav-item">
@@ -95,6 +101,12 @@ foreach ($medicines as $medicine) {
                     <a href="reports.php" class="nav-link">
                         <i class="fas fa-chart-bar"></i>
                         Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.php" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        Settings
                     </a>
                 </li>
             </ul>
@@ -187,10 +199,9 @@ foreach ($medicines as $medicine) {
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Generic Name</th>
-                            <th>Category</th>
+                            <th>Description</th>
                             <th>Quantity</th>
-                            <th>Unit Price</th>
+                            <th>Price</th>
                             <th>Expiry Date</th>
                             <th>Supplier</th>
                             <th>Actions</th>
@@ -199,7 +210,7 @@ foreach ($medicines as $medicine) {
                     <tbody>
                         <?php if (empty($medicines)): ?>
                         <tr>
-                            <td colspan="9" style="text-align: center; padding: 40px;">
+                            <td colspan="8" style="text-align: center; padding: 40px;">
                                 <?php echo empty($search) ? 'No medicines found' : 'No medicines match your search criteria'; ?>
                             </td>
                         </tr>
@@ -215,8 +226,7 @@ foreach ($medicines as $medicine) {
                             <tr <?php echo $row_class; ?>>
                                 <td>#<?php echo str_pad($medicine['medicine_id'], 4, '0', STR_PAD_LEFT); ?></td>
                                 <td><?php echo $medicine['name']; ?></td>
-                                <td><?php echo $medicine['generic_name'] ?: 'N/A'; ?></td>
-                                <td><?php echo $medicine['category'] ?: 'N/A'; ?></td>
+                                <td><?php echo $medicine['description'] ?: 'N/A'; ?></td>
                                 <td>
                                     <?php echo $medicine['quantity']; ?>
                                     <?php if ($is_low_stock): ?>
@@ -235,7 +245,8 @@ foreach ($medicines as $medicine) {
                                     <div class="action-buttons">
                                         <a href="view_medicine.php?id=<?php echo $medicine['medicine_id']; ?>" class="btn-sm btn-view">View</a>
                                         <a href="edit_medicine.php?id=<?php echo $medicine['medicine_id']; ?>" class="btn-sm btn-edit">Edit</a>
-                                        </div>
+                                        <a href="update_stock.php?id=<?php echo $medicine['medicine_id']; ?>" class="btn-sm btn-primary">Stock</a>
+                                    </div>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

@@ -150,13 +150,7 @@ $patient_info = $db->single();
                                     <?php endif; ?>
                                 </div>
                             </div>
-                            <div class="appointment-actions">
-                                <a href="view_prescription.php?id=<?php echo $prescription['prescription_id']; ?>" class="btn btn-sm btn-primary">View Details</a>
-                                <a href="print_prescription.php?id=<?php echo $prescription['prescription_id']; ?>" class="btn btn-sm btn-secondary" target="_blank">Print</a>
-                                <?php if ($prescription['status'] === 'Pending'): ?>
-                                <a href="pharmacy_pickup.php?id=<?php echo $prescription['prescription_id']; ?>" class="btn btn-sm btn-success">Pickup Info</a>
-                                <?php endif; ?>
-                            </div>
+                            
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>

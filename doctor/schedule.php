@@ -91,11 +91,6 @@ $upcoming_appointments = $db->resultset();
                         My Patients
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="prescriptions.php" class="nav-link">
-                        <i class="fas fa-prescription-bottle"></i>
-                        Prescriptions
-                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="schedule.php" class="nav-link active">

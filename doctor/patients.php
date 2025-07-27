@@ -84,12 +84,6 @@ $doctor_info = $db->single();
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="prescriptions.php" class="nav-link">
-                        <i class="fas fa-prescription-bottle"></i>
-                        Prescriptions
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="schedule.php" class="nav-link">
                         <i class="fas fa-clock"></i>
                         Schedule
@@ -165,9 +159,7 @@ $doctor_info = $db->single();
                             </div>
                             <div class="appointment-actions">
                                 <a href="view_patient.php?id=<?php echo $patient['patient_id']; ?>" class="btn btn-sm btn-primary">View Details</a>
-                                <a href="patient_history.php?id=<?php echo $patient['patient_id']; ?>" class="btn btn-sm btn-secondary">Medical History</a>
-                                <a href="add_prescription.php?patient_id=<?php echo $patient['patient_id']; ?>" class="btn btn-sm btn-success">New Prescription</a>
-                            </div>
+                                </div>
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>

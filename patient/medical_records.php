@@ -151,8 +151,7 @@ $patient_info = $db->single();
                             </div>
                             <div class="appointment-actions">
                                 <a href="view_record.php?id=<?php echo $record['record_id']; ?>" class="btn btn-sm btn-primary">View Details</a>
-                                <a href="print_record.php?id=<?php echo $record['record_id']; ?>" class="btn btn-sm btn-secondary" target="_blank">Print</a>
-                            </div>
+                                </div>
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>

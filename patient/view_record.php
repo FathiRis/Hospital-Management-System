@@ -213,9 +213,6 @@ $patient_info = $db->single();
                 </div>
                 
                 <div class="appointment-actions" style="margin-top: 30px; text-align: center;">
-                    <a href="print_record.php?id=<?php echo $record_id; ?>" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-print"></i> Print Record
-                    </a>
                     <?php if ($record['follow_up_date'] && strtotime($record['follow_up_date']) >= time()): ?>
                     <a href="book_appointment.php?doctor_id=<?php echo $record['doctor_id']; ?>" class="btn btn-primary">
                         <i class="fas fa-calendar-plus"></i> Book Follow-up
