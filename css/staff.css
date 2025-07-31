@@ -161,7 +161,6 @@ body {
     background: var(--secondary-color);
     transform: translateY(-2px);
 }
-
 /* Dashboard Cards */
 .dashboard-grid {
     display: grid;

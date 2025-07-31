@@ -245,8 +245,7 @@ foreach ($medicines as $medicine) {
                                     <div class="action-buttons">
                                         <a href="view_medicine.php?id=<?php echo $medicine['medicine_id']; ?>" class="btn-sm btn-view">View</a>
                                         <a href="edit_medicine.php?id=<?php echo $medicine['medicine_id']; ?>" class="btn-sm btn-edit">Edit</a>
-                                        <a href="update_stock.php?id=<?php echo $medicine['medicine_id']; ?>" class="btn-sm btn-primary">Stock</a>
-                                    </div>
+                                        </div>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

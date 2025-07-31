@@ -61,6 +61,25 @@ body {
     border: 3px solid rgba(255,255,255,0.2);
 }
 
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
 .sidebar-header h2 {
     font-size: 22px;
     font-weight: 600;
@@ -163,6 +182,7 @@ body {
     transform: translateY(-2px);
 }
 
+
 /* Today's Schedule */
 .schedule-container {
     background: white;
@@ -237,6 +257,65 @@ body {
 .appointment-actions {
     display: flex;
     gap: 10px;
+}
+
+/* Dashboard Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent-color);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.card-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card-change {
+    font-size: 14px;
+    color: #666;
 }
 
 /* Patient Records */
@@ -437,6 +516,13 @@ body {
     font-size: 14px;
 }
 
+
+.btn-view {
+    background: #17a2b8;
+    color: white;
+}
+
+
 /* Status Badges */
 .status-badge {
     padding: 6px 12px;
@@ -507,6 +593,10 @@ body {
     .form-row {
         grid-template-columns: 1fr;
     }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
     
     .header {
         flex-direction: column;
@@ -566,3 +656,4 @@ body {
 .add-medication:hover {
     background: var(--light-accent);
 }
+

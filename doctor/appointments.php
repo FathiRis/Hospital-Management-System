@@ -152,8 +152,7 @@ $appointments = $db->resultset();
                         <input type="date" name="date" class="form-control" value="<?php echo htmlspecialchars($date_filter); ?>">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn-primary">Filter</button>
-                        <a href="add_appointment.php" class="btn-primary" style="margin-left: 10px;">Add Appointment</a>
+                        <button type="submit" class="btn btn-primary">Filter</button>
                     </div>
                 </form>
             </div>

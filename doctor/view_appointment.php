@@ -109,55 +109,64 @@ if (!$appointment) {
                 </div>
             </div>
             
-            <!-- Appointment Information -->
+            <!-- Appointment Informaton -->
             <div class="form-container">
                 <div class="form-header">
                     <h3 class="form-title">Appointment #<?php echo str_pad($appointment['appointment_id'], 6, '0', STR_PAD_LEFT); ?></h3>
                     <div>
-                       <a href="appointments.php" class="btn-primary" style="background: #6c757d; margin-left: 10px;"><i class="fas fa-arrow-left"></i> Back to List</a>
+                       <a href="appointments.php" class="btn btn-primary" style="background: #6c757d; margin-left: 10px;"><i class="fas fa-arrow-left"></i> Back to List</a>
                     </div>
                 </div>
                 
                 <div class="dashboard-grid">
-                    <div class="dashboard-card">
-                        <div class="card-header">
-                            <h3 class="card-title">Patient Information</h3>
-                            <div class="card-icon">
-                                <i class="fas fa-user"></i>
+                    <div class="quick-stats">
+                        <div class="dashboard-card">
+                            <div class="stat-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Patient Information</h3>
+                                    <div class="card-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                            
+                                <p><strong>Name:</strong> <?php echo $appointment['patient_name'] . ' ' . $appointment['patient_last']; ?></p>
+                                <p><strong>Age:</strong> <?php echo calculateAge($appointment['dob']); ?> years</p>
+                                <p><strong>Blood Type:</strong> <?php echo $appointment['blood_type'] ?: 'N/A'; ?></p>
+                        
                             </div>
                         </div>
-                        <p><strong>Name:</strong> <?php echo $appointment['patient_name'] . ' ' . $appointment['patient_last']; ?></p>
-                        <p><strong>Age:</strong> <?php echo calculateAge($appointment['dob']); ?> years</p>
-                        <p><strong>Blood Type:</strong> <?php echo $appointment['blood_type'] ?: 'N/A'; ?></p>
-                    </div>
-                    
-                    <div class="dashboard-card">
-                        <div class="card-header">
-                            <h3 class="card-title">Doctor Information</h3>
-                            <div class="card-icon">
-                                <i class="fas fa-user-md"></i>
+                        <div class="dashboard-card">
+                            <div class="stat-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Doctor Information</h3>
+                                    <div class="card-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                </div>
+                                <p><strong>Doctor:</strong> Dr. <?php echo $appointment['doctor_name'] . ' ' . $appointment['doctor_last']; ?></p>
+                                <p><strong>Specialization:</strong> <?php echo $appointment['specialization']; ?></p>
+                                 <p><strong>Department:</strong> <?php echo $appointment['department']; ?></p>
                             </div>
                         </div>
-                        <p><strong>Doctor:</strong> Dr. <?php echo $appointment['doctor_name'] . ' ' . $appointment['doctor_last']; ?></p>
-                        <p><strong>Specialization:</strong> <?php echo $appointment['specialization']; ?></p>
-                        <p><strong>Department:</strong> <?php echo $appointment['department']; ?></p>
-                    </div>
-                    
-                    <div class="dashboard-card">
-                        <div class="card-header">
-                            <h3 class="card-title">Appointment Details</h3>
-                            <div class="card-icon">
-                                <i class="fas fa-calendar"></i>
+                        
+                        <div class="dashboard-card">
+                            <div class="stat-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Appointment Details</h3>
+                                    <div class="card-icon">
+                                        <i class="fas fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <p><strong>Date:</strong> <?php echo formatDate($appointment['appointment_date']); ?></p>
+                                <p><strong>Time:</strong> <?php echo formatTime($appointment['appointment_time']); ?></p>
+                                <p><strong>Status:</strong> 
+                                    <span class="status-badge status-<?php echo strtolower($appointment['status']); ?>">
+                                        <?php echo $appointment['status']; ?>
+                                    </span>
+                                </p>
+                                <p><strong>Created:</strong> <?php echo formatDateTime($appointment['created_at']); ?></p>
                             </div>
                         </div>
-                        <p><strong>Date:</strong> <?php echo formatDate($appointment['appointment_date']); ?></p>
-                        <p><strong>Time:</strong> <?php echo formatTime($appointment['appointment_time']); ?></p>
-                        <p><strong>Status:</strong> 
-                            <span class="status-badge status-<?php echo strtolower($appointment['status']); ?>">
-                                <?php echo $appointment['status']; ?>
-                            </span>
-                        </p>
-                        <p><strong>Created:</strong> <?php echo formatDateTime($appointment['created_at']); ?></p>
                     </div>
                 </div>
                 

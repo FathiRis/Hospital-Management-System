@@ -113,7 +113,7 @@ $pending_bills = $db->single()['total'];
                     <p>Manage your health and appointments</p>
                 </div>
                 <div class="header-right">
-                    <a href="emergency.php" class="emergency-btn">
+                    <a class="emergency-btn">
                         <i class="fas fa-exclamation-triangle"></i>
                         Emergency
                     </a>
