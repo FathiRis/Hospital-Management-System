@@ -3,7 +3,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '21510');
-define('DB_NAME', 'final_hospital_management_system');
+define('DB_NAME', 'hospital_management_system');
 
 class Database {
     private $host = DB_HOST;
